@@ -46,7 +46,7 @@
       let height = args.HEIGHT;
       let strstart = "width=";
       let str = strstart.concat(width, ", height=", height);
-      this[id] = window.open(web, "", str);
+      window[id] = window.open(web, "", str);
     }
   }
   Scratch.extensions.register(new NewWindows());
