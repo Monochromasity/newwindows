@@ -1,29 +1,33 @@
-// Name: Example
-// ID: replitexamplejs
-// Description: Example extension for GitHub's "TW/PM Extension Template" (template by Monochromasity). (<--- remove this bit, dont remove this bit --->) Made using the TW/PM Extension Template by Monochromasity on GitHub.
-// By: You :)
+// Name: New Windows
+// ID: monowindows
+// Description: Lets you open websites in new windows.
+// By: Monochromasity
 
 (function (Scratch) {
   "use strict";
 
-  class ExampleExtension {
+  class NewWindows {
     getInfo() {
       return {
-        id: 'replitexamplejs',
-        name: 'Example',
+        id: 'monowindows',
+        name: 'New Windows',
         blocks: [
           {
-            opcode: 'example',
-            blockType: Scratch.BlockType.REPORTER,
-            text: 'join [ONE] [TWO]',
+            opcode: 'openwebsite',
+            blockType: Scratch.BlockType.COMMAND,
+            text: 'open website [WEB] in new window with width [WIDTH] height [HEIGHT]',
             arguments: {
-              ONE: {
+              WEB: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue: 'apple '
+                defaultValue: 'https://penguinmod.com'
               },
-              TWO: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: 'banana'
+              WIDTH: {
+                type: Scratch.ArgumentType.NUMBER,
+                defaultValue: '400'
+              },
+              HEIGHT: {
+                type: Scratch.ArgumentType.NUMBER,
+                defaultValue: '400'
               }
             }
           }
@@ -31,12 +35,14 @@
       };
     }
 
-    example(args) {
-      let one = args.ONE
-      let two = args.TWO
-      let join = one.concat(two)
-      return join;
+    openwebsite(args) {
+      let web = args.WEB;
+      let width = args.WIDTH;
+      let height = args.HEIGHT;
+      let strstart = "width=";
+      let str = strstart.concat(width, ", height=", height);
+      window.open(web, "", str);
     }
   }
-  Scratch.extensions.register(new ExampleExtension());
+  Scratch.extensions.register(new NewWindows());
 })(Scratch);
