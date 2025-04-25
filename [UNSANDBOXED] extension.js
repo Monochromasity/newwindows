@@ -15,11 +15,15 @@
           {
             opcode: 'openwebsite',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'open website [WEB] in new window with width [WIDTH] height [HEIGHT]',
+            text: 'open website [WEB] in new window with ID [ID], width [WIDTH], and height [HEIGHT]',
             arguments: {
               WEB: {
                 type: Scratch.ArgumentType.STRING,
                 defaultValue: 'https://penguinmod.com'
+              },
+              ID: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'myWindow'
               },
               WIDTH: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -37,11 +41,12 @@
 
     openwebsite(args) {
       let web = args.WEB;
+      id = args.ID;
       let width = args.WIDTH;
       let height = args.HEIGHT;
       let strstart = "width=";
       let str = strstart.concat(width, ", height=", height);
-      window.open(web, "", str);
+      this[id] = window.open(web, "", str);
     }
   }
   Scratch.extensions.register(new NewWindows());
