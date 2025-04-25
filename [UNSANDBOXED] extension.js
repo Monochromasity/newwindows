@@ -41,7 +41,7 @@
 
     openwebsite(args) {
       let web = args.WEB;
-      id = args.ID;
+      let id = args.ID;
       let width = args.WIDTH;
       let height = args.HEIGHT;
       let strstart = "width=";
