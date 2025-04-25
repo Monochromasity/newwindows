@@ -50,7 +50,7 @@
       };
     }
 
-    openwebsite(args) {
+    openwindow(args) {
       let web = args.WEB;
       let id = args.ID;
       let width = args.WIDTH;
