@@ -62,6 +62,7 @@
     closewithid(args) {
       let id = args.ID;
       eval("newwindows-" + id + ".close();");
+    }
   }
   Scratch.extensions.register(new NewWindows());
 })(Scratch);
