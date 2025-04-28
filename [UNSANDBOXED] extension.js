@@ -53,7 +53,7 @@
     openwindow(args) {
       let web = args.WEB;
       let iduf = args.ID;
-      let id = iduf.toLowercase();
+      let id = iduf.toLowerCase();
       let width = args.WIDTH;
       let height = args.HEIGHT;
       let strstart = "width=";
@@ -62,7 +62,7 @@
     }
     closewithid(args) {
       let iduf = args.ID;
-      let id = iduf.toLowercase();
+      let id = iduf.toLowerCase();
       eval("window" + id + ".close();");
     }
   }
