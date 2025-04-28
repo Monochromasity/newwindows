@@ -52,16 +52,18 @@
 
     openwindow(args) {
       let web = args.WEB;
-      let id = args.ID;
+      let iduf = args.ID;
+      let id = iduf.toLowercase();
       let width = args.WIDTH;
       let height = args.HEIGHT;
       let strstart = "width=";
       let str = strstart.concat(width, ", height=", height);
-      eval("var newwindows" + id + " = window.open(web, '', str);");
+      eval("var window" + id + " = window.open(web, '', str);");
     }
     closewithid(args) {
-      let id = args.ID;
-      eval("newwindows" + id + ".close();");
+      let iduf = args.ID;
+      let id = iduf.toLowercase();
+      eval("window" + id + ".close();");
     }
   }
   Scratch.extensions.register(new NewWindows());
