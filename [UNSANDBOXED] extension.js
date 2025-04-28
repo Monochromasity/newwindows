@@ -57,7 +57,7 @@
       let height = args.HEIGHT;
       let strstart = "width=";
       let str = strstart.concat(width, ", height=", height);
-      eval("newwindows" + id + " = window.open(web, '', str);");
+      eval("let newwindows" + id + " = window.open(web, '', str);");
     }
     closewithid(args) {
       let id = args.ID;
