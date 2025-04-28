@@ -57,11 +57,11 @@
       let height = args.HEIGHT;
       let strstart = "width=";
       let str = strstart.concat(width, ", height=", height);
-      eval("newwindows-" + id + " = window.open(web, '', str);");
+      eval("newwindows" + id + " = window.open(web, '', str);");
     }
     closewithid(args) {
       let id = args.ID;
-      eval("newwindows-" + id + ".close();");
+      eval("newwindows" + id + ".close();");
     }
   }
   Scratch.extensions.register(new NewWindows());
