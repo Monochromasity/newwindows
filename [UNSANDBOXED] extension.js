@@ -58,12 +58,14 @@
       let height = args.HEIGHT;
       let strstart = "width=";
       let str = strstart.concat(width, ", height=", height);
-      eval("var windows" + id + " = window.open(web, '', str);");
+      let name = "windows" + id
+      this[name] = window.open(web, '', str);
     }
     closewithid(args) {
       let iduf = args.ID;
       let id = iduf.toLowerCase();
-      eval("window[windows" + id + "].close();");
+      let name = "windows" + id
+      this[name].close();
     }
   }
   Scratch.extensions.register(new NewWindows());
