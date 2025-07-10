@@ -10,6 +10,7 @@
     getInfo() {
       return {
         id: 'monowindows',
+        color1: '#297bff',
         name: 'New Windows',
         blocks: [
           {
@@ -98,6 +99,17 @@
                 defaultValue: 'myWindow'
               }
             }
+          },
+          {
+            opcode: 'isopen',
+            blockType: Scratch.BlockType.BOOLEAN,
+            text: 'is window with ID [ID] open?',
+            arguments: {
+              ID: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'myWindow'
+              }
+            }
           }
         ],
         menus: {
@@ -166,8 +178,23 @@
     closewithid(args) {
       let iduf = args.ID;
       let id = iduf.toLowerCase();
-      let name = "windows" + id
+      let name = "windows" + id;
       this[name].close();
+    }
+    isopen(args) {
+      let iduf = args.ID;
+      let id = iduf.toLowerCase();
+      let name = "windows" + id;
+      try {
+        if (!this[name].closed) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      catch(err) {
+        return false;
+      }
     }
   }
   Scratch.extensions.register(new NewWindows());
