@@ -6,15 +6,15 @@
 (function (Scratch) {
   "use strict";
   
-  let menubar = 'no';
-  let status = 'no';
-  let titlebar = 'no';
-  let full = 'no';
-  let location = 'no';
-  let resizable = 'no';
-  let scroll = 'no';
-  let toolbar = 'no';
-  let replace = 'false';
+  let menubar = "no";
+  let status = "no";
+  let titlebar = "no";
+  let full = "no";
+  let location = "no";
+  let resizable = "no";
+  let scroll = "no";
+  let toolbar = "no";
+  let replace = "false";
 
   class NewWindows {
     getInfo() {
@@ -72,7 +72,8 @@
           {
             opcode: 'reset',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'reset properties to default'
+            text: 'reset properties to default',
+            hideFromPalette: true
           },
           {
             opcode: 'getproperty',
@@ -177,6 +178,7 @@
       let left = Math.abs(Number(args.LEFT));
       let top = Math.abs(Number(args.TOP));
       let str = strstart.concat(width, ",height=", height, ",fullscreen=", full, ",left=", left, ",top=", top, ",menubar=", menubar, ",status=", status, ",titlebar=", titlebar, ",location=", location, ",resizable=", resizable, ",scrollbars=", scroll, ",toolbar=", toolbar);
+      console.log(str);
       let name = "windows" + id;
       this[name] = window.open(web, '', str, replace);
     }
@@ -215,24 +217,25 @@
       }
     }
     reset() {
-      menubar = 'no';
-      status = 'no';
-      titlebar = 'no';
-      full = 'no';
-      location = 'no';
-      resizable = 'no';
-      scroll = 'no';
-      toolbar = 'no';
-      replace = 'false';
+      menubar = "no";
+      status = "no";
+      titlebar = "no";
+      full = "no";
+      location = "no";
+      resizable = "no";
+      scroll = "no";
+      toolbar = "no";
+      replace = "false";
     }
     getproperty(args) {
       let title = args.PROPERTY;
-      if (this[title] == "yes") {
+      let propval = this[title];
+      if (propval == "yes") {
         return true;
-      } else if (this[title] == "no") {
+      } else if (propval == "no") {
         return false;
       } else {
-        return this[title];
+        return propval;
       }
     }
   }
