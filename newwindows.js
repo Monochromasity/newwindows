@@ -217,15 +217,15 @@
       }
     }
     reset() {
-      menubar = "no";
-      status = "no";
-      titlebar = "no";
-      full = "no";
-      location = "no";
-      resizable = "no";
-      scroll = "no";
-      toolbar = "no";
-      replace = "false";
+      this.menubar = "no";
+      this.status = "no";
+      this.titlebar = "no";
+      this.full = "no";
+      this.location = "no";
+      this.resizable = "no";
+      this.scroll = "no";
+      this.toolbar = "no";
+      this.replace = "false";
     }
     getproperty(args) {
       let title = args.PROPERTY;
