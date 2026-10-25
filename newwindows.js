@@ -26,7 +26,7 @@
           {
             opcode: 'openwindow',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'open website [WEB] in new window with ID: [ID] width: [WIDTH] height: [HEIGHT] distance from left: [LEFT] distance from top: [TOP]',
+            text: 'open website [WEB] in new window with ID [ID] with dimensions [WIDTH] x [HEIGHT] with a position of [LEFT] [TOP] from the top left',
             arguments: {
               WEB: {
                 type: Scratch.ArgumentType.STRING,
