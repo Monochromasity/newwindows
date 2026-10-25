@@ -73,7 +73,6 @@
             opcode: 'reset',
             blockType: Scratch.BlockType.COMMAND,
             text: 'reset properties to default',
-            hideFromPalette: true
           },
           {
             opcode: 'getproperty',
@@ -142,7 +141,7 @@
                 value: 'scroll',
               },
               {
-                text: 'toolbar (IE, Firefox)',
+                text: 'toolbar (IE, Firefox only)',
                 value: 'toolbar',
               },
               {
